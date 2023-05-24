@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mardoku</title>
+
+    <!-- Use sudoku.js from github -->
+    <script src="/sudoku_js_algorithmns.js"></script>
+    <script src="/game.js" ></script>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="game">
+        <div class="game__buttons">
+            <div class="game__buttons__row">
+                <button class="game__buttons__row__action_button" id="game__buttons__row__action_button_1" data-action="clear">Give Up 😔</button>
+                <select class="game__buttons__row__action_button" id="game__buttons__row__action_button_2" data-action="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="very-hard">Very Hard</option>
+                    <option value="insane">Insane</option>
+                    <option value="inhuman">Inhuman</option>
+                </select>
+            </div>
+            <div class="game__buttons__row">
+                <button class="game__buttons__row__number_button" id="game__buttons__row__number_button_1" data-number="1">1</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_2" data-number="2">2</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_3" data-number="3">3</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_4" data-number="4">4</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_5" data-number="5">5</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_6" data-number="6">6</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_7" data-number="7">7</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_8" data-number="8">8</button><button class="game__buttons__row__number_button" id="game__buttons__row__number_button_9" data-number="9">9</button>
+            </div>
+        </div>
+
+        <div class="game__board">
+            <!-- .game__board__row#game__board__row_$*9[data-row='$']>.game__board__cell#game__board__cell_$*9[data-cell='$'] -->
+            
+            <div class="game__board__row" id="game__board__row_1" data-row="1">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="1" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="1" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="1" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="1" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="1" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="1" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="1" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="1" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="1" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_2" data-row="2">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="2" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="2" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="2" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="2" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="2" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="2" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="2" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="2" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="2" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_3" data-row="3">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="3" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="3" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="3" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="3" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="3" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="3" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="3" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="3" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="3" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_4" data-row="4">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="4" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="4" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="4" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="4" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="4" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="4" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="4" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="4" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="4" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_5" data-row="5">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="5" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="5" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="5" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="5" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="5" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="5" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="5" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="5" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="5" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_6" data-row="6">
+                <div class="game__board__cell" id="game__board__cell_2" data-row="6" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_1" data-row="6" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="6" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="6" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="6" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="6" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="6" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="6" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="6" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_7" data-row="7">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="7" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="7" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="7" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="7" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="7" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="7" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="7" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="7" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="7" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_8" data-row="8">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="8" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="8" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="8" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="8" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="8" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="8" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="8" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="8" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="8" data-cell="9"></div>
+            </div>
+            <div class="game__board__row" id="game__board__row_9" data-row="9">
+                <div class="game__board__cell" id="game__board__cell_1" data-row="9" data-cell="1"></div>
+                <div class="game__board__cell" id="game__board__cell_2" data-row="9" data-cell="2"></div>
+                <div class="game__board__cell" id="game__board__cell_3" data-row="9" data-cell="3"></div>
+                <div class="game__board__cell" id="game__board__cell_4" data-row="9" data-cell="4"></div>
+                <div class="game__board__cell" id="game__board__cell_5" data-row="9" data-cell="5"></div>
+                <div class="game__board__cell" id="game__board__cell_6" data-row="9" data-cell="6"></div>
+                <div class="game__board__cell" id="game__board__cell_7" data-row="9" data-cell="7"></div>
+                <div class="game__board__cell" id="game__board__cell_8" data-row="9" data-cell="8"></div>
+                <div class="game__board__cell" id="game__board__cell_9" data-row="9" data-cell="9"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

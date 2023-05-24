@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    visibility: hidden;
+}
+
+* {
+    user-select: none;
+    box-sizing: border-box;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'IBM Plex Mono', sans-serif;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 20px;
+}
+
+.game__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    gap: 20px;
+}
+
+.game__buttons__row {
+    display: flex;
+    margin-left: -50px;
+    width: 400px;
+    gap: 10px;
+}
+
+.game__buttons__row__number_button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+}
+
+.game__buttons__row__number_button:hover {
+    background-color: #eee;
+}
+
+.game__buttons__row__number_button:active {
+    background-color: #ccc;
+}
+
+.game__buttons__row__action_button {
+    height: 60px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+}
+
+.game__buttons__row__action_button * {
+    text-align: center;
+}
+
+.game__buttons__row__action_button:hover {
+    background-color: #eee;
+}
+
+.game__buttons__row__action_button:active {
+    background-color: #ccc;
+}
+
+.game__board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 30px 0px #bbb;
+    transform: rotate(46.3deg);
+    margin-top: 110px;
+}
+
+.game__board__row {
+    display: flex;
+    width: 300px;
+}
+
+.game__board__cell {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-align: center; 
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.game__board__cell span {
+    transform: rotate(-46.3deg);
+    margin-bottom: -1.5px;
+}
+
+.game__board__cell:hover {
+    background-color: #eee;
+}
+
+.game__board__cell:active {
+    background-color: #ddd !important;
+}
+
+.game__board__cell--active {
+    background-color: #ddd !important;
+}
+
+.game__board__cell--conflicting {
+    background-color: rgb(255, 162, 162);
+}
+
+.game__board__cell--finished {
+    background-color: rgb(162, 255, 162);
+}
+
+.game__board__cell[data-row="4"], .game__board__cell[data-row="7"] {
+    border-top: 1px solid #bbb;
+}
+
+.game__board__cell[data-cell="3"], .game__board__cell[data-cell="6"] {
+    border-right: 1px solid #bbb;
+}
