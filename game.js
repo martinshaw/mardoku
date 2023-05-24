@@ -221,6 +221,10 @@ const onNumberButtonElementClick = (event) => {
     if (GameState.isPlaying !== true) return;
 
     const numberButtonElement = event.target;
+
+    if (numberButtonElement.dataset?.action === 'undo' && numberButtonElement.dataset?.number == '0') 
+        return dropLatestGrid();
+
     const numberValue = parseInt(numberButtonElement.dataset.number);
     if (numberValueIsValid(numberValue) === false) return;
 
@@ -338,6 +342,18 @@ const cloneLatestGrid = () => {
     GameState.currentGrids.push(clonedGrid);
 
 };
+
+const dropLatestGrid = () => {
+
+    if (GameState.currentGrids.length <= 1) return false;
+
+    GameState.currentGrids.pop();
+
+    drawLatestGridToCellElements();
+
+    refreshBoardStyling();
+
+}
 
 const commitChangeToLatestGridGridPosition = (gridPosition, value = null) => {
 
