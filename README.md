@@ -1,7 +1,9 @@
-# mardoku
+<center>
+  <h1>mardoku</h1>
+  <i>Minimal, functional and exciting Sudoku game from Martin Shaw</i>
+</center>
 
-Fun Sudoku Game - Written in JavaScript
-
-Try it out: https://martinshaw.github.io/mardoku
+## Want to try it out ?
+https://martinshaw.github.io/mardoku
 
 ![](martinshaw.github.io_mardoku_.png)
